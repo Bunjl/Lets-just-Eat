@@ -1,0 +1,96 @@
+/* Selected Clothes on Right sidebar */
+
+.bar-header .right-menu-button {margin-right: 5px; } 
+.selected-menu{
+
+	.button-bottom  {margin-top: 30px;}
+}
+
+.no-selected {
+	color:#bbb;
+	padding: 20px 10px;
+	display: block;
+	text-align: center;
+	//font-family: $font-family-simple;
+	span {
+		font-size: 100px;
+		display: block;
+		margin-bottom: 0px;
+		color: darken($stable,0%);
+	}
+	img {
+
+		width: 150px;
+		//opacity: .8;
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.selected-clothes{
+	.item-divider {
+		border: none;
+		color:#999;
+		font-weight: bold;
+		font-size: 12px;
+	}
+	.item {
+		&:first-child {border-top:none;}
+		&.activated,&:active,&:focus,&:hover {border-color: transparent;background-color: #FFF;}
+		&.activated .item-content {background-color: #FFF; border-color: transparent;}
+		border-color:transparent; 
+		position: relative;
+		.item-content{
+			padding: 10px 15px;
+
+			&:after {display:block;width:100%;background:#f1f1f1;height:1px;position:absolute; left:0; bottom:0px; content:'';
+				transform: translate3d(80px,0,0);
+				transition:transform 0.4s ease; 
+			}
+		}
+
+		.imgs {display: inline-block;min-height:40px;}
+		img.clothing {width: 25px;margin: 1px 0 0;}
+		.price {
+			padding: 10px 5px 0;
+			display: inline-block;
+			vertical-align: top;
+			font-size: 14px;
+			color: #999;
+
+		}
+		.actions {
+			display: flex;
+		    position: absolute;
+		    right: 16px;
+		    top: 10px;
+		    .remove {
+		    	color:lighten($assertive,10%);
+		    }
+		}
+		.button {min-height: 0;}
+
+
+		&.detail-open {
+			.item-content:after { transform: translate3d(0,0,0); }
+		}
+		.toggle-detail {font-size: 25px;}
+		.cloth-detail {
+			font-size: 12px;
+			line-height: 14px;
+			padding-top:10px;
+			//margin-right: -40px;
+			div.row { padding: 5px 0px 5px 20px;}
+			.col-75 {padding-left: 0;}
+			.name {color: #000;white-space: normal;display: block;}
+			.brand {color: #aaa;}
+			.price { text-align: right;color: #999; vertical-align: top;padding: 5px;font-size: 12px;}
+			.button-bar {padding: 10px 0 0 0px;}
+			.button-bar > .button {font-weight: bold; text-transform: uppercase;font-size: 14px;
+				&.button-energized {}
+			}
+			.added {color: #bbb;text-align: center;padding: 12px 17px 10px;}
+		}
+
+	}
+}

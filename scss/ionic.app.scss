@@ -1,0 +1,85 @@
+
+//$basic:                           #30b896 !default;
+$basic:                           #2DE2B5 !default;
+//$basic:                           #313D4F !default;
+
+$light:                           #fff !default;
+$stable:                          darken(#E7E3F2,0%) !default;
+//$stable:                          #DEE1E5 !default;
+$positive:                        #387ef5 !default;
+//$calm:                            #5E47A3 !default;
+$calm:                            lighten(#FF0000,30%) !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #FFF359 !default;
+$assertive:                       #FF5C5C !default;
+$royal:                           $basic !default;
+$dark:                            #404855 !default;
+$negative:                        #FF0000 !default;
+$neutral:                         #0F9D58 !default;
+$revenue:                         #25E672 !default;
+$button-royal-border:             $royal !default;
+$button-border-radius:            0px !default;
+
+$bar-height:                      54px !default;
+$bar-calm-text:                   #FFF !default;
+$bar-stable-text:                 $calm;
+
+$button-energized-text:           rgba(0,0,0,.7);
+$button-stable-text:              lighten($calm,20%);
+$button-small-font-size:          13px !default;
+//$bar-title-font-size:             20px !default;
+
+$item-padding:                    20px !default;
+$button-light-border:             #eee !default;
+
+$font-family-sans-serif:       -apple-system,"Helvetica Neue", "Roboto", "Segoe UI", sans-serif !default;
+$font-family-simple:           -apple-system,'Helvetica Neue','Roboto', 'Segoe UI',sans-serif;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+@import "scss/styles/style";
+
+
+
+.pull-right  {float: right;}
+.pull-left {float: left;}
+
+
+.totalprice {
+    display: inline-block;
+    font-size: 20px;
+    float: right;
+   // margin:7px 5px;
+    color: lighten($basic,0%);
+    //color: lighten($light,25%);
+    //font-family: $font-family-simple;
+    position: absolute;
+    right: 10px;
+    top:15px;
+    z-index: 999;
+    //border: 1px solid #FFF;
+    //padding: 3px 5px 1px;
+    //.currency {color: lighten($dark,40%);}
+ }
+
+
+// Ios start bouncing with this
+.platform-android {
+  .no-scroll > .scroll{
+    overflow: hidden;
+  }
+}
+
+
+
+.fade {
+  -webkit-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+  opacity: 0;
+}
+
+

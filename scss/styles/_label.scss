@@ -1,0 +1,165 @@
+$clear: lighten($negative,30%);
+$medium: lighten($neutral,25%);
+$crowded: lighten($neutral,5%);
+$darkest: darken($revenue,10%);
+
+$info-size:17px;
+$info-font-size:10px;
+
+.labels {
+     background-color: $light;
+     color: #000;
+     font-size: 18px;
+     font-weight: bold;
+     text-align: center;
+     border-radius:50%;
+     width:36px;
+     height:36px;
+     line-height:36px;
+     white-space: nowrap;
+     overflow: visible !important;
+
+     .activity {
+          color: #FFF;
+          text-align: center;
+          width: $info-size;
+          height: $info-size;
+          line-height: $info-size;
+          border-radius: 50%;
+          background:$clear;
+          display: inline-block;
+
+          font-size: $info-font-size;
+     }
+
+ 
+     &.medium {
+          .activity {background: $medium;}
+          .svgprogress .circle_animation{stroke:$medium;}
+     }
+     &.dark {
+          .activity {background: $crowded;}
+          .svgprogress .circle_animation{stroke:$crowded;}
+     }
+
+    &.darkest {
+          .activity {background: $darkest;}
+          .svgprogress .circle_animation{stroke:$darkest;}
+     }
+
+     .icon {
+          position: absolute;
+          right: -3px;
+          top:-9px;  
+          z-index: 10;
+          text-align: center;
+          z-index: 9;
+     }
+     .icon+.icon {
+          right: -12px;
+          top:4px;
+          z-index: 8;
+     }
+       .icon+.icon+.icon {
+          right: -12px;
+          top:8px;
+          z-index: 8;
+     }
+        .icon+.icon+.icon+.icon {
+          right: -12px;
+          top:20px;
+          z-index: 8;
+        }
+
+     .sale {
+          color: #000;
+          width: $info-size;
+          height: $info-size;
+          line-height: $info-size;
+          border-radius: 50%;
+          background:lighten($energized,15%);
+          font-size: $info-font-size;
+          font-weight: bold;
+     }
+      .battery {
+          color: #000;
+          width: $info-size;
+          height: $info-size;
+          line-height: $info-size;
+          border-radius: 50%;
+          background:lighten($energized,15%);
+          font-size: $info-font-size;
+          font-weight: bold;
+     }
+       .job {
+          color: #000;
+          width: $info-size;
+          height: $info-size;
+          line-height: $info-size;
+          border-radius: 50%;
+          background:lighten($energized,15%);
+          font-size: $info-font-size;
+          font-weight: bold;
+     }
+       .flag {
+          color: #000;
+          width: $info-size;
+          height: $info-size;
+          line-height: $info-size;
+          border-radius: 50%;
+          background:lighten($energized,15%);
+          font-size: $info-font-size;
+          font-weight: bold;
+     }
+      .battery {
+          display: none;
+          color: #000;
+          width: $info-size;
+          height: $info-size;
+          line-height: $info-size;
+          border-radius: 50%;
+          background:lighten($energized,15%);
+          font-size: $info-font-size;
+          font-weight: bold;
+     }
+     &.has-sale {
+          .sale {
+               display: inline-block;
+          }
+     }
+
+   }
+
+
+@keyframes round {
+  to {
+    stroke-dashoffset: 50;
+  }
+}
+
+svg.svgprogress {
+   -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    display: block;
+    position: absolute;
+    top:0;
+    z-index: 10;
+}
+
+.circle_animation {
+  stroke-dasharray: 100; /* this value is the pixel crcumference of the circle */
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.9s ease;
+  stroke:$clear;
+  stroke-width:2;
+}
+
+.discount {
+  display: block;
+  background:lighten($energized,15%);
+  margin:10px auto 0;
+  color:darken($energized,45%);
+  font-weight: bold;
+  text-align:center;  
+  padding: 0.5em;
+}

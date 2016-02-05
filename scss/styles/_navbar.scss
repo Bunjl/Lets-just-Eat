@@ -1,0 +1,76 @@
+$gradient1:darken($stable,20%);
+$gradient2:#78DDB3;
+$gradient3:lighten($energized,25%);
+
+
+
+
+.bar.bar-header {
+    
+    //-webkit-box-shadow:none !important; 
+    //box-shadow:none !important;
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none;
+    border-bottom: none;
+    border-radius: 0;
+    //border-bottom: 3px solid lighten($basic,20%) !important;
+
+    .platform-android & {
+      &.main-title .title{
+        overflow: visible;
+        .logo-title{
+          display: inline-block;
+          left:-15px;
+          position: relative;
+          z-index: 2;
+        }
+      }
+    }
+
+    &.main-title .title {
+      //margin:0;
+      //padding:0;
+    }
+    .button.button-icon:before {font-size: 22px;}
+    .button.button-icon.ion-navicon:before {font-size: 30px;}
+    .buttons-right .button {
+    //  color:$energized;
+    }
+}
+.nav-bar-container .nav-bar-block:last-child .bar.bar-header,
+.menu.menu-right .bar.bar-header {
+    box-shadow:none;
+    //  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+
+.bar.main-title {
+  .nav-bar-title img {
+    height: 22px;
+    top:5px;
+    position: relative;
+  }
+}
+
+
+
+.bar-header.bar-stable {
+  //color:$basic;
+  //color:$light;
+	//border-color:$basic;
+  .title{ /*text-transform: uppercase;   font-size: 15px;  font-weight: bold;font-family: $font-family-simple; */}
+	//.button,.title {color:$light;border-radius:none;}
+  .right-buttons {
+    //.button.button-icon {text-shadow:2px -1px 0 lighten($basic,25%);}
+  }
+  .left-buttons {
+    //.button.button-icon {text-shadow:-2px -1px 0 lighten($basic,25%);}
+  }
+
+  
+
+}
+
+

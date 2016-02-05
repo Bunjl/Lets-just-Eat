@@ -1,0 +1,21 @@
+.bar.bar-header {
+		-webkit-box-shadow:none !important; 
+		box-shadow:none !important;
+	  border: 0px !important;
+    border-bottom-color: transparent !important;
+    background: $calm;
+    color: $light;
+    background-image: none;
+    border-bottom: none;
+}
+.bar-stable .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: $light;
+    font-size: 17px;
+}
+
+.bar.bar-stable .title {
+    color: $light;
+}

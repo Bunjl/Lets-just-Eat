@@ -1,0 +1,12 @@
+{
+  "name": "Volontario",
+  "app_id": "ca39b02a",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

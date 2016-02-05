@@ -1,0 +1,14 @@
+.filter-gender {
+	border-top:none;
+	padding: 0;
+	.button-bar > .button {
+		padding-top: 5px;
+
+		&:before {
+			font-size: 28px;
+		}
+		margin: 0;
+		&.button-active {color: $calm;border-bottom: 2px solid $calm;border-left: none;}
+	}
+}
+

@@ -1,0 +1,65 @@
+
+
+ $filter-bg:#fff;
+
+/* 
+.headerimg {
+  height:54px;
+  background: #fafafa;
+  text-align: center;
+  .icon {font-size:30px; margin: 13px;display: inline-block; color: $calm;}
+} 
+*/
+
+
+.bar.bar-header .title {padding-left:5px;padding-right: 5px;}
+.menu.menu-left .scroll-content.filtermenu {
+  background-color:$filter-bg; 
+}
+.filtermenu {
+
+
+  .filters {
+     display: block;
+     //border-bottom:1px solid rgba(0,0,0,.05);
+     
+    &.section>.list {padding-top: 7px;padding-bottom: 3px;}
+    .item { // General
+      //padding: 10px;
+      border-color: rgba(0,0,0,.05);
+      border:none;
+      font-size: 13px;
+      background-color: $filter-bg;
+    }
+    .item-divider { // Title: top, bottom..
+
+      padding-top: 16px;
+      padding-bottom: 20px;
+    	background:$filter-bg;
+    	border-bottom: none;
+
+      &.item-toggle {
+       // padding: 15px 10px;
+        color: $calm;
+        //.toggle {top:17px;}
+    	}
+    }
+
+    &.inactive {
+    	.filter{opacity: 0.2; display: none;}
+    }
+
+    @import
+    "filter-sort.scss",
+    "filter-gender.scss",
+    "filter-color.scss";
+
+
+
+  }
+
+}
+
+
+    @import
+    "filter-color.scss";

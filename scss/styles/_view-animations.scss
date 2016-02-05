@@ -1,0 +1,28 @@
+
+
+@keyframes scaleVertical {
+      0% {transform:translate3d(0,0,0) scaleY(0);}
+      100% { transform:translate3d(0,0,0) scaleY(1);}
+}
+
+
+@keyframes fadeMeIn {
+      0% {transform:translate3d(0,0,0) scale(1.015); opacity:0;}
+      50% {transform:translate3d(0,0,0) scale(1); opacity:0.8;}
+      100% { transform:translate3d(0,0,0) scale(1); opacity:1;}
+}
+
+
+.view-huge-drop{
+	transform-origin:50% 0;
+	animation: scaleVertical 0.5s cubic-bezier(.87,-.41,.19,1.44);
+}
+
+
+.view-fade-in{
+
+	transform-origin:50% 50%;
+	animation: fadeMeIn 500ms ease-in; //cubic-bezier(.83,.12,.96,.65);
+	animation-fill-mode: forwards;
+
+}
