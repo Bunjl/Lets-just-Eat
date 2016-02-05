@@ -1,0 +1,73 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="::isNotAndroid" edge-drag-threshold="::dragThreshold"> 
+    <ion-nav-bar class="bar-calm main-title" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+
+
+
+  <ion-side-menu side="left"> 
+  
+    <ion-content class="filtermenu">
+
+    <div class="custom-bar-header">
+      <div class="flex">
+        <button menu-close ng-click="editAvatar()" class="button button-icon button-user">
+            <span class="face" ng-if="user.gender!=='mens'" ng-include="'templates/user-avatar-male-svg.html'" ></span>
+            <span class="face" ng-if="user.gender==='mens'" ng-include="'templates/user-avatar-male-svg.html'"></span>
+            <span class="icon ion-gear-a"></span>
+        </button>
+        <h1>
+          <span ng-bind="user.givenName"></span>
+          <span ng-bind="user.familyName"></span>
+        </h1>
+      </div>
+
+    </div>
+
+
+
+
+    <ion-list class="navigation--basic" >
+        <ion-item class="item-icon-left item-light" ui-sref="app.map" ui-sref-active="current" menu-close>
+          <span class="icon ion-map"></span> Map
+        </ion-item>
+        <ion-item class="item-icon-left item-light" ui-sref="app.list" ui-sref-active="current" menu-close>
+          <span class="icon ion-map"></span> List
+        </ion-item>
+           <ion-item class="item-icon-left item-light" ui-sref="app.userActivity" ui-sref-active="current" menu-close>
+          <span class="icon ion-map"></span> My Activity
+        </ion-item>
+           <ion-item class="item-icon-left item-light" ui-sref="app.avatar" ui-sref-active="current" menu-close>
+          <span class="icon ion-map"></span> Me
+        </ion-item>
+    </ion-list>
+
+    <ion-list class="navigation--basic" >
+        <ion-item class="item-icon-left item-light" ui-sref="app.settings" ui-sref-active="current" menu-close>
+          <span class="icon ion-android-settings"></span> Settings
+        </ion-item>
+
+        <ion-item class="item-icon-left item-light" ui-sref="app.help" ui-sref-active="current" menu-close>
+          <span class="icon ion-android-happy"></span> Help & Feedback
+        </ion-item>
+
+      
+    </ion-list>
+
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>

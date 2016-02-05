@@ -1,0 +1,22 @@
+<div class="button-set">
+    <button 
+      ng-click="buttonsVisible=!buttonsVisible" 
+      class="button button-light icon button-round button-filters"
+      ng-class="{'button--open':buttonsVisible}"
+    >
+      <i></i>
+    </button>
+
+    <span class="button-set__action-buttons" ng-if="buttonsVisible">
+       <a class="button button-light button-round button-round--small ion-android ion-woman" ng-class="{'selected':a}" ng-click="a=!a">
+         <span>Female</span>
+       </a>
+       <a class="button button-light button-round button-round--small ion-android flaticon-t-shirt5" ng-class="{'selected':b}" ng-click="b=!b">
+         <span>Shirt</span>
+       </a>
+       <a class="button button-light button-round button-round--small ion-android flaticon-long35" ng-class="{'selected':c}" ng-click="c=!c">
+         <span>Pants</span>
+       </a>
+       <a class="button button-light button-round button-round--small ion-android ion-android-color-palette" ng-class="{'selected':d}" ng-click="d=!d"><span>Colors</span></a>
+    </span>
+</div>
