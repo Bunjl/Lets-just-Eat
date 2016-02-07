@@ -1,0 +1,44 @@
+<ion-view id="Lets just eat." hide-nav-bar="true">
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon ion-android-done favorites" ng-click="save()"></button>
+  </ion-nav-buttons>
+  
+
+  <ion-content overflow-scroll="true" class="ion-content">
+    
+  <h1>Lets just eat at...</h1>
+
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">		
+      <div class="center">
+		  <h1 id="word">
+		    <span class="letter">L</span>
+		    <span class="letter">E</span>
+		    <span class="letter">T</span>
+		    <span class="letter">S</span>
+		    <span class="letter"> </span>
+		    <span class="letter">E</span>
+		    <span class="letter">A</span>
+		    <span class="letter">T</span>
+		    <span class="letter"></span>
+		    <span class="letter">A</span>
+		    <span class="letter">T</span>
+		  </h1>
+		  <div id="test"></div>
+		</div><i class="material-icons right">more_vert</i></span>
+		<br>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><span ng-bind="thePlace.name"></span><i class="material-icons right">close</i></span>
+      <span ng-bind="thePlace.formatted_address"></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+     <button class="button waves-effect waves-light btn" ng-click="getPlace()">..or maybe somewhere else?</button>
+	</ion-content>
+</ion-view>

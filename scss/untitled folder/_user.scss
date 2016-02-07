@@ -1,0 +1,98 @@
+/* User edit */
+
+.edit-user {
+
+	.face {
+		.col {
+			opacity: 0.5;
+			transition:flex 0.5s ease;
+			padding: 5px 10px 0;
+			img,svg {
+				display: inline-block;
+				height: 120px;
+				transform: translate3d(0,0,0) scale(0.7);
+				transform-origin: 50% 0;
+				transition:transform 0.4s ease;
+			}
+
+			&.last {
+				text-align: left;
+				}
+			&.first {
+				text-align: right;
+			}
+
+			&.active {
+				
+				opacity: 1; 
+				flex: 2 1 0;
+				img,svg {
+					transform: translate3d(0,0,0) scale(1);
+				}
+				
+			}
+
+
+		} 
+
+	}
+
+	.list {
+		.item.user-selection:last-child {
+			border-width: 0;
+		}
+	}
+
+	.user-selection {
+
+		&.ng-touched {
+			background: #eee;
+		}
+		border-width: 0 0 1px 0;
+		margin-bottom: 1px;
+		display: block;
+		padding: 16px 12px;
+
+		&.item-toggle {
+			margin-top: 10px;
+		}
+		select,.input-label {
+			position: relative;
+			display: block;
+			width: 100%;
+			direction: ltr;
+			max-width: auto;
+			padding: 0;
+			text-indent: 0;
+			cursor: pointer;
+		}
+		.input-label {
+			margin: 0 4px 2px;
+		}
+		select {
+			color: #888;
+			text-transform: capitalize;
+			option {
+				padding: 0;
+			}
+		}
+		&:after {
+			display:none;
+		}
+		label {
+			display: block;
+			//padding: 10px 0;
+			//background: #f3f3f3;
+			text-align: center;
+			color:$calm;
+		}
+		.button {
+			text-transform: uppercase;
+			font-weight: bold;
+			&.selected {
+				border-bottom: 2px solid $calm;
+			}
+		}
+	}
+
+}

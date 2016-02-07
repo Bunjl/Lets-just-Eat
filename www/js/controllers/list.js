@@ -16,7 +16,9 @@ angular.module('lg.controllers')
             picked = 100000,
             color = d3.scale.category20c();//category20c()
 
-        var data = $scope.data; /*
+        var data = $scope.data;
+        console.log(data);
+         /*
          [
                     {"label":"Question 1",  "value":1,  "question":"What CSS property is used for specifying the area between the content and its border?"}, // padding
                     {"label":"Question 2",  "value":1,  "question":"What CSS property is used for changing the font?"}, //font-family
@@ -71,7 +73,7 @@ angular.module('lg.controllers')
             })
             .attr("text-anchor", "end")
             .text( function(d, i) {
-                return data[i].label;
+                return data[i].name;
             });
 
         container.on("click", spin);
@@ -105,7 +107,7 @@ angular.module('lg.controllers')
 
                     //populate question
                     d3.select("#question h1")
-                        .text(data[picked].label);
+                        .text(data[picked].name);
 
                     oldrotation = rotation;
                 });

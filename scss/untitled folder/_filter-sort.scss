@@ -1,0 +1,21 @@
+
+
+    .item.cloth-counter.item-select {
+    	color: #888;
+    	padding:15px 20px 12px;
+    	margin-bottom: 0px;
+    	//border-bottom:1px solid rgba(0,0,0,.05);
+    	.total {color:$calm;}
+
+    	&:after { //caret
+    		margin-top: -3px;
+    		color: $calm;
+    	}
+    	select{
+            background: $filter-bg;
+    		color: #888;
+    		font-size: 13px;
+    		padding: 1px 33px 0 10px
+
+    	}
+    }

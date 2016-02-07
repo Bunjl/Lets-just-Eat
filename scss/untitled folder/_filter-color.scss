@@ -1,0 +1,96 @@
+
+  
+
+// Colors
+.filter-color{
+	//padding: 10px;
+	white-space: normal;
+	text-align: left;
+	&>.button-small {margin-left: -5px;}
+	.color {	
+		overflow: visible;
+		float: left;
+		display: inline-block;
+		width: 26px;
+		height: 26px;
+		margin: 5px 5px 5px 5px;
+		border-radius: 50%;
+		-webkit-transition:all 0.35s ease-out;
+		transition:transform 0.35s ease-out;
+		//border:2px solid rgba(255,255,255,1);
+		box-shadow: 0 1px 1px rgba(0,0,0,.3), 0 0 1px rgba(0,0,0,.1);
+		-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.3), 0 0 1px rgba(0,0,0,.1);
+		color:rgba(0,0,0,.4);
+		color:$light;
+		text-align: center;
+		line-height: 29px;
+		font-size: 20px;
+
+
+		&:active {
+			-webkit-transform: scale(1.2);
+			transform: scale(1.2);
+		}
+		&.color-white {
+			color: rgba(0,0,0,.2);
+		}
+		&.color-multicolored {
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b97ff), color-stop(31%,#6b97ff), color-stop(31%,#fff600), color-stop(68%,#fff600), color-stop(68%,#ff4949));
+			background: linear-gradient(to bottom, #6b97ff 0%,#6b97ff 31%,#fff600 31%,#fff600 68%,#ff4949 68%);
+		}
+		&.color-petrol {
+			background: #006070;
+		}
+	}
+	.chosenColors {
+		cursor: pointer;
+		padding-left:5px;
+		.color {
+			opacity: 0;
+			-webkit-animation:slideRight 0.2s ease-out forwards;
+			animation:slideRight 0.2s ease-out forwards;
+			-webkit-animation-delay:100ms;
+			animation-delay:100ms;
+			-webkit-animation-fill-mode:forwards;
+			animation-fill-mode:forwards;
+			
+			margin:5px -5px 5px 0;
+			display: block;
+			//border:2px solid rgba(0,0,0,.3);
+			$count: 18;
+			$speed: 70ms;
+			@for $i from 2 through $count{
+		      &:nth-child(#{$i}) {	        
+		          animation-delay: ($i+1)*$speed - ($i/$count * $speed);
+		          -webkit-animation-delay: ($i+1)*$speed - ($i/$count * $speed);    
+		      }
+		    }
+		}
+	}
+	.colorPalette {
+
+		-webkit-animation:fadeIn 0.1s ease-in;
+		animation:fadeIn 0.1s ease-in;
+
+		position: relative;
+		padding-right: 30px;
+
+		.action {
+			position: absolute;
+			font-size: 20px;
+			right: 0px;
+		}
+		.acceptSelection {
+			top:-5px;
+		}
+		.clearSelection {
+			top:35px;
+			right: 2px;
+		}
+	}
+}
+
+
+
+ 
+  

@@ -1,0 +1,59 @@
+/* animate.scss */
+
+  @keyframes popup {
+      from { transform: scale(0);  }
+      to { transform: scale(1); }
+  }
+
+
+
+   @-webkit-keyframes popup {
+      from { -webkit-transform: scale(0);  }
+      to { -webkit-transform:scale(1);  }
+  }
+
+
+ 
+  @-webkit-keyframes slideRight {
+      from { -webkit-transform:translate3d(100%,0,0); opacity:0; }
+      to {  -webkit-transform:translate3d(0,0,0);  opacity: 1; }
+  }
+
+ @keyframes slideRight {
+      0% { transform:translate3d(100%,0,0); opacity:0; }
+      100% { transform:translate3d(0,0,0); opacity: 1; }
+  }
+
+ @-webkit-keyframes fadeIn {
+      from { opacity:0; }
+      to {  opacity: 1; }
+  }
+
+ @keyframes fadeIn {
+      0% { opacity:0; }
+      100% { opacity: 1; }
+  }
+
+
+@keyframes move-to-right-upper-corner {
+      0% { opacity:1; transform:translate3d(0,0,0) scale(4); }
+      100% { opacity: 0.5;   transform:translate3d(8vw,-100vh,0) scale(0.5); }
+
+}
+
+@-webkit-keyframes move-to-right-upper-corner {
+      0% { opacity:1; -webkit-transform:translate3d(0,0,0) scale(4); }
+      100% { opacity: 0.5;   -webkit-transform:translate3d(8vw,-100vh,0) scale(0.5); }
+
+}
+
+
+  @mixin gradient-radial($innerColor,$outerColor) {
+    background-color: $outerColor;
+    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor));
+    background-image: -webkit-radial-gradient(circle, $innerColor, $outerColor);
+    background-image: -moz-radial-gradient(circle, $innerColor, $outerColor);
+    background-image: -o-radial-gradient(circle, $innerColor, $outerColor);
+    background-image: radial-gradient(circle, $innerColor, $outerColor);
+    background-repeat: no-repeat;
+}

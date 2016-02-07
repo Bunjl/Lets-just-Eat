@@ -7760,17 +7760,22 @@ html, body {
   height: 400px;
   top: 0;
   left: 0;
-  padding-left: 1.5em; }
+  padding-left: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+  /*font-family: 'Fredoka One', Arial, sans-serif;*/ }
 
 #question {
   position: absolute;
   text-align: center;
-  top: 0; }
+  top: 0;
+  width: 100%;
+  margin-left: 3em; }
 
 #question h1 {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
-  font-family: 'Fredoka One', Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  /*font-family: 'Fredoka One', Arial, sans-serif;*/
   position: absolute;
   padding: 0;
   margin: 0;
@@ -7779,7 +7784,9 @@ html, body {
   transform: translate(0, -50%); }
 
 h1 {
-  font-family: 'Fredoka One', Arial, sans-serif;
+  font-size: 2.2em !important;
+  font-family: 'Quicksand', sans-serif;
+  /*font-family: 'Fredoka One', Arial, sans-serif;*/
   letter-spacing: -1px;
   color: #444;
   padding: 0.5em 0.5em 0.45em;
@@ -7801,6 +7808,10 @@ h1 {
   margin: 0 auto;
   text-align: center;
   overflow: hidden; }
+
+.card .card-title {
+  font-size: 1em !important;
+  font-weight: 300; }
 
 .menu-content {
   box-shadow: -1px 0 1px rgba(0, 0, 0, 0.05), 1px 0 1px rgba(0, 0, 0, 0.05);
