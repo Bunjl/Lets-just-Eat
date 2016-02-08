@@ -84,5 +84,5 @@ angular.module('lg', ['ionic','ionic.service.core','chart.js','ionic.service.ana
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/PlacePickCtrl');
+  $urlRouterProvider.otherwise('/app/placepick');
 });

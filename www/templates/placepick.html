@@ -30,13 +30,16 @@
 		    <span class="letter">T</span>
 		  </h1>
 		  <div id="test"></div>
-		</div><i class="material-icons right">more_vert</i></span>
+		</div>
+		<i class="material-icons right">more_vert</i></span>
 		<br>
-    </div>
-    <div class="card-reveal">
+		<div class="star-ratings-sprite"><span ng-style="{width:(rating/5*100)}" class="rating"></span></div>
+    	</div>
+    	<div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><span ng-bind="thePlace.name"></span><i class="material-icons right">close</i></span>
-      <span ng-bind="thePlace.formatted_address"></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p>{{ placeDetails.formated_address }}</p>
+      <p>{{ placeDetails.international_phone_number }}</p>
+      <p><a ng-href="{{ placeDetails.website }}">website</a></p>
     </div>
   </div>
    <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
@@ -50,7 +53,7 @@
       <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
     </ul>
   </div>
-  
+
      <button class="button waves-effect waves-light btn" ng-click="getPlace()">..or maybe somewhere else?</button>
 	</ion-content>
 </ion-view>

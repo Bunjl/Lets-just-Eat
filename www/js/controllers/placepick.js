@@ -1,9 +1,21 @@
 angular.module('lg.controllers')
 
 .controller('PlacePickCtrl', function($scope,$rootScope,$state,$http, CORSURL, Categories, $q) {
+    var lat = "61.483";
+    var lon = "23.8866";
+    
+    $scope.getLocation = function() {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+          lat = pos.coords.latitude;
+          lon = pos.coords.longitude; 
+        }, function(error) {
+          alert('Unable to get location: ' + error.message);
+        });
+    };
+    $scope.getLocation();
 
-
- 	$http.get(CORSURL+'https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+tampere&key=AIzaSyDJYwKcoyQSN7C1wURGhQMH75uVHrDGhy4')
+ 	$scope.getPlaces = function(){ 
+    $http.get(CORSURL+'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lon+'&radius=15000&types=restaurant&opennow=true&key=AIzaSyDJYwKcoyQSN7C1wURGhQMH75uVHrDGhy4')
  	.then(function successCallBack(response){
 		$scope.data = response.data.results;
 	
@@ -106,7 +118,7 @@ angular.module('lg.controllers')
           this.next = nextChar;
           this.speed = Math.floor(Math.random() * (500 - 10) );
           this.total = 0;
-          this.duration = 2000;
+          this.duration = 500;
           this.animating = true;
           this.isDead = false;
           
@@ -166,18 +178,25 @@ angular.module('lg.controllers')
             var rand = (Math.floor(Math.random() * $scope.data.length) + 1);
             letters.start( response.data.results[rand].name );
             $scope.thePlace = response.data.results[rand];
-            console.log(rand);
+            $scope.rating = response.data.results[rand].rating;
+            var placeid = response.data.results[rand].place_id;
+            $http.get(CORSURL+'https://maps.googleapis.com/maps/api/place/details/json?placeid='+placeid+'&key=AIzaSyDJYwKcoyQSN7C1wURGhQMH75uVHrDGhy4')
+            .then(function successCallBack(response){
+                $scope.placeDetails = response.result;
+                console.log($scope.placeDetails);
+            }, function errorCallBack(response){
 
-            
-            };
+            });
+        };
 
-			}, function errorCallBack(response){
+	   }, function errorCallBack(response){
 
 			});
 
+    };
 
-
-   $scope.categories = Categories.all();
+    $scope.getPlaces(); 
+    $scope.categories = Categories.all();
 
    $scope.toggleCategory = function(id){
         Categories.toggle(id);
