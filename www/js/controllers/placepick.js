@@ -6,6 +6,7 @@ angular.module('lg.controllers')
     
     $scope.getLocation = function() {
     navigator.geolocation.getCurrentPosition(function(pos) {
+      console.log(pos.coords.heading);
           lat = pos.coords.latitude;
           lon = pos.coords.longitude; 
         }, function(error) {
@@ -15,9 +16,10 @@ angular.module('lg.controllers')
     $scope.getLocation();
 
  	$scope.getPlaces = function(){ 
-    $http.get(CORSURL+'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lon+'&radius=15000&types=restaurant&opennow=true&key=AIzaSyDJYwKcoyQSN7C1wURGhQMH75uVHrDGhy4')
- 	.then(function successCallBack(response){
-		$scope.data = response.data.results;
+    //$http.get(CORSURL+'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lon+'&radius=150000&types=restaurant&opennow=true&key=AIzaSyDJYwKcoyQSN7C1wURGhQMH75uVHrDGhy4')
+ 	$http.get(CORSURL+'http://www.lounaat.info/ajax/map?latSW=61.49519086195719&lngSW=23.7177893813232&latNE=61.501334434748955&lngNE=23.759846418676716&view=l%C3%A4hist%C3%B6ll%C3%A4')
+  .then(function successCallBack(response){
+		$scope.data = response.data;
 	
         Letters = function() {
           this.lettersDOM = null;
@@ -175,18 +177,12 @@ angular.module('lg.controllers')
         var letters = new Letters();
 
         $scope.getPlace = function() {
-            var rand = (Math.floor(Math.random() * $scope.data.length) + 1);
-            letters.start( response.data.results[rand].name );
-            $scope.thePlace = response.data.results[rand];
-            $scope.rating = response.data.results[rand].rating;
-            var placeid = response.data.results[rand].place_id;
-            $http.get(CORSURL+'https://maps.googleapis.com/maps/api/place/details/json?placeid='+placeid+'&key=AIzaSyDJYwKcoyQSN7C1wURGhQMH75uVHrDGhy4')
-            .then(function successCallBack(response){
-                $scope.placeDetails = response.result;
-                console.log($scope.placeDetails);
-            }, function errorCallBack(response){
-
-            });
+           var rand = (Math.floor(Math.random() * $scope.data.length) + 1);
+            letters.start( response.data[rand].name );
+            $scope.thePlace = response.data[rand];
+            $scope.rating = response.data[rand].rating;
+            var placeid = response.data[rand].place_id;
+            
         };
 
 	   }, function errorCallBack(response){

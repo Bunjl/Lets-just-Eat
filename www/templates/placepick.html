@@ -5,7 +5,7 @@
   </ion-nav-buttons>
   
 
-  <ion-content overflow-scroll="true" class="ion-content">
+  <ion-content class="ion-content">
     
   <h1>Lets just eat at...</h1>
 
@@ -30,16 +30,20 @@
 		    <span class="letter">T</span>
 		  </h1>
 		  <div id="test"></div>
+            <p>{{ thePlace.address }}</p>
+            <p><a href="{{ thePlace.link }}">lisää verkkosivuilta</a></p>
 		</div>
 		<i class="material-icons right">more_vert</i></span>
 		<br>
 		<div class="star-ratings-sprite"><span ng-style="{width:(rating/5*100)}" class="rating"></span></div>
     	</div>
     	<div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><span ng-bind="thePlace.name"></span><i class="material-icons right">close</i></span>
-      <p>{{ placeDetails.formated_address }}</p>
-      <p>{{ placeDetails.international_phone_number }}</p>
-      <p><a ng-href="{{ placeDetails.website }}">website</a></p>
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+      <p><a ng-href="{{ placeDetails.website }}">{{ placeDetails.name }}</a></p>
+      <p>{{ placeDetails.website }}</p>
+      <p>{{ placeDetails.formatted_address }}</p>
+      <p>{{ placeDetails.formatted_phone_number }}</p>
+      <p>{{ open = placeDetails.opening_hours.open_now === true ? 'Currently open' : 'Closed at this time'  }}</p>
     </div>
   </div>
    <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">

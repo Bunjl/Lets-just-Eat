@@ -8,8 +8,8 @@ angular.module('lg.controllers')
 		$scope.data = response.data.results;
 			
         var padding = {top:20, right:40, bottom:0, left:0},
-            w = 400 - padding.left - padding.right,
-            h = 400 - padding.top  - padding.bottom,
+            w = 100 - padding.left - padding.right,
+            h = 100 - padding.top  - padding.bottom,
             r = Math.min(w, h)/2,
             rotation = 0,
             oldrotation = 0,
